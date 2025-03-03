@@ -42,7 +42,6 @@
 }
 
 :root {
-<<<<<<< HEAD
   --primary-immutable: #ffffff;
   --accent: #4283e4;
   --extra-large-text: 4rem;
@@ -67,7 +66,6 @@
   --secondary: #2c2c2c;
   --light-grey: #272525;
   --medium-grey: #e9e8e8;
-=======
 	--primary-immutable: #ffffff;
 	--accent: #4283e4;
 	--large-text: 2.25rem;
@@ -131,10 +129,6 @@
 	--buisness-color: hsl(130, 28%, 45%);
 	--web-color: hsl(177, 100%, 25%);
 	--faculty-color: hsl(0, 39%, 44%);
-<<<<<<< HEAD
->>>>>>> e1fc686 (Primary fixes on staff.tsx, and CSS pages for the former. Additionally, the about page was updated and a modal and a card module were added for conviencence of the staff page! Some photos were temporary placed in the pages>about section. Those will be moved shortly)
-=======
->>>>>>> 0c0a7dd842dc6f08450de7d2a18e39f827b2779b
 }
 
 [data-theme="dark"] [data-hide-on-theme="dark"],
