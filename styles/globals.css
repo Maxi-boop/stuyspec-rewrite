@@ -131,7 +131,10 @@
 	--buisness-color: hsl(130, 28%, 45%);
 	--web-color: hsl(177, 100%, 25%);
 	--faculty-color: hsl(0, 39%, 44%);
+<<<<<<< HEAD
 >>>>>>> e1fc686 (Primary fixes on staff.tsx, and CSS pages for the former. Additionally, the about page was updated and a modal and a card module were added for conviencence of the staff page! Some photos were temporary placed in the pages>about section. Those will be moved shortly)
+=======
+>>>>>>> 0c0a7dd842dc6f08450de7d2a18e39f827b2779b
 }
 
 [data-theme="dark"] [data-hide-on-theme="dark"],
