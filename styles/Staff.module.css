@@ -1,84 +1,350 @@
 #main {
-	width: 95vw;
-	max-width: 1000px;
-	padding-block: 1rem;
-	margin: 0 auto;
-	text-align: center;
+  font-family: "Minion Pro";
+  background-color: var(--secondary);
+
+  /** VARIABLES FOR DEPARTMENT COLORS */
+}
+.header{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color:  hsl(0, 0%, 17%);
+  height: 100vh;
+}
+.header #text{
+  grid-column: 1 / span 4;
+  background-color: #2b2b2b;
+  color: white;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 0.8901rem + 1.7582vw, 3rem);
+  padding: 1rem;
+  font-family: "Minion Pro";
+}
+#tagScrollContainer{
+  max-height: 100vh;
+  grid-column: 5 / span 2;
+  overflow: hidden;
+}
+#tagScrollContent{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
+}
+.curve{
+  width: 100%;
+}
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: stretch;
+  gap: 1rem;
+  margin: 1rem;
+}
+.cardContainer {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 1rem;
+  gap: 0.5rem;
+  -webkit-box-shadow: 5px 17px 29px 4px var(--cardShadowColor);
+  -moz-box-shadow: 5px 17px 29px 4px var(--cardShadowColor);
+  box-shadow: 5px 17px 29px 4px var(--cardShadowColor);
+}
+#title{
+  text-align: center;
+  margin: 1rem;
+  font-size: clamp(1.5rem, 1.4176rem + 1.3187vw, 3rem);
 }
 
-#departments h3 {
-	font-size: 1.6rem;
+.cardPicture {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
-#departments p {
-	font-size: 1.25rem;
+.cardPicture img {
+  width: 100%;
+  border-radius: 1rem;
+  -webkit-box-shadow: 5px 17px 41px 0px var(--cardImageShadowColor);
+  -moz-box-shadow: 5px 17px 41px 0px var(--cardImageShadowColor);
+  box-shadow: 5px 17px 41px 0px var(--cardImageShadowColor);
+}
+.cardName {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, 0.989rem + 0.1758vw, 1.2rem);
 }
 
-.EIC {
-	color: rgb(215, 82, 82);
+.cardTags {
+  width: 200%;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+  overflow: hidden;
 }
 
-.news {
-	color: rgb(94, 138, 153);
+#cardManagingBoard {
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 300rem;
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 125ms ease-in-out;
 }
 
-.features {
-	color: rgb(175, 156, 86);
+#cardManagingBoard p {
+  font-size: 2rem;
+  transform: translateY(15%);
+  user-select: none;
 }
 
-.ops {
-	color: rgb(99, 112, 207);
+#cardEditorsInTraining {
+  height: 2.5rem;
+  aspect-ratio: 2/1;
+  border-radius: 300rem;
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 250ms ease-in-out;
 }
 
-.science {
-	color: rgb(69, 147, 40);
+#cardEditorsInTraining p {
+  font-size: 2rem;
+  transform: translateY(15%);
+  user-select: none;
+}
+#clickedEIT {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+#cardLearnMore {
+  background-color: var(--primary);
+  border-radius: 300rem;
+  padding: 0.5rem;
+  color: var(--secondary);
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Minion Pro";
+  overflow: hidden;
+  transition: ease-in-out 250ms;
 }
 
-.ae {
-	color: rgb(219, 101, 120);
+#cardLearnMore p {
+  font-size: 2rem;
+  user-select: none;
+  transform: translateY(-5%);
+  font-family: "Minion Pro";
 }
 
-.humor {
-	color: rgb(187, 187, 10);
+#learnMoreAbout {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+#cardLearnMore:hover {
+  background-color: var(--darker-primary);
+  color: var(--secondary);
+}
+/*
+#cardLearnMore:hover #plusButton {
+	width: 0;
+	height: 0;
+	visibility: hidden;
 }
 
-.sports {
-	color: rgb(34, 181, 181);
+#cardLearnMore:hover {
+	width: fit-content;
+	height: 2.5rem;
+}
+#cardLearnMore:hover #learnMoreAbout {
+	width: 100%;
+	height: 100%;
+	visibility: visible;
+	font-size: large;
+}
+*/
+#cardManagingBoard:hover {
+  background-color: var(--EIC-color);
+}
+#cardEditorsInTraining:hover {
+  overflow: hidden;
+  aspect-ratio: 2.5 / 1;
+  background-color: var(--ae-color);
+  cursor:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🎉</text></svg>")
+      16 0,
+    auto;
+  animation: turnTen 250ms forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#cardEditorsInTraining:hover #unclickedEIT {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+#cardEditorsInTraining:hover #clickedEIT {
+  width: fit-content;
+  height: 100%;
+  visibility: visible;
+  font-size: medium;
+}
+@keyframes turnTen {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(10deg);
+  }
 }
 
-.photos {
-	color: rgb(223, 150, 14);
+#departmentTags svg {
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+}
+#tagEIC,
+#tagNEWS,
+#tagFEATURES,
+#tagOPINIONS,
+#tagSCIENCE,
+#tagAE,
+#tagHUMOR,
+#tagSPORTS,
+#tagART,
+#tagPHOTOS,
+#tagLAYOUT,
+#tagCOPY,
+#tagBUISNESS,
+#tagWEB,
+#tagFACULTY {
+  border-radius: 300rem;
+  padding: 0.5rem;
+  color: var(--secondary);
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Minion Pro";
+  overflow: hidden;
+  transition: ease-in-out 250ms;
+}
+#tagEIC{
+  background-color: var(--EIC-color);
+}
+#tagNEWS{
+  background-color: var(--news-color);
+}
+#tagFEATURES{
+  background-color: var(--features-color);
+}
+#tagOPINIONS{
+  background-color: var(--buisness-color);
+}
+#tagSCIENCE{
+  background-color: var(--science-color);
+}
+#tagAE{
+  background-color: var(--ae-color);
+}
+#tagHUMOR{
+  background-color: var(--humor-color);
+}
+#tagSPORTS{
+  background-color: var(--sports-color);
+}
+#tagART{
+  background: var(--art-color);
+}
+#tagPHOTOS{
+  background: var(--photos-color);
+}
+#tagLAYOUT{
+  background: var(--layout-color);
+}
+#tagCOPY{
+  background-color: var(--copy-color);
+}
+#tagBUISNESS{
+  background-color: var(--buisness-color);
+}
+#tagWEB{
+  background-color: var(--web-color);
+}
+#tagFACULTY{
+  background-color: var(--faculty-color);
+}
+#tagEIC svg,
+#tagNEWS svg,
+#tagFEATURES svg,
+#tagOPINIONS svg,
+#tagSCIENCE svg,
+#tagAE svg,
+#tagHUMOR svg,
+#tagSPORTS svg,
+#tagART svg,
+#tagPHOTOS svg,
+#tagLAYOUT svg,
+#tagCOPY svg,
+#tagBUISNESS svg,
+#tagWEB svg,
+#tagFACULTY svg{
+  fill: var(--primary);
 }
 
-.art {
-	color: rgb(145, 64, 179);
+#departmentTags #tagNEWS {
+  border-radius: 300rem;
+  padding: 0.5rem;
+  color: var(--secondary);
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Minion Pro";
+  overflow:hidden;
+  transition: ease-in-out 250ms;
+  background-color: var(--news-color);
+}
+@media screen and (max-width: 1000px){
+  .cardsContainer{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (max-width: 650px){
+  .cardsContainer{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (max-width: 450px){
+  .cardsContainer{
+    grid-template-columns: repeat(1,1fr);
+  }
 }
 
-.layout {
-	color: rgb(134, 134, 134);
-}
-
-.copy {
-	color: rgb(176, 134, 103);
-}
-
-.biz {
-	color: rgb(82, 147, 93);
-}
-
-.web {
-	color: rgb(0, 128, 122);
-}
-
-.faculty {
-	color: rgb(154, 68, 68);
-}
-
-#main h3 {
-	margin-top: 30px;
-}
-
-.special_def {
-	text-align: right;
-	font-style: italic;
+.modalArea{
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
